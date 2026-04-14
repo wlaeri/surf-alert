@@ -1,0 +1,12 @@
+name = "surf-alert"
+main = "src/index.ts"
+compatibility_date = "2024-12-30"
+
+[triggers]
+crons = ["0 * * * *"]  # every hour
+
+[vars]
+SURF_SCORE_THRESHOLD = "70"
+
+# Set DATABASE_URL as a secret:
+#   wrangler secret put DATABASE_URL
