@@ -7,6 +7,13 @@ crons = ["0 * * * *"]  # every hour
 
 [vars]
 SURF_SCORE_THRESHOLD = "70"
+ALERT_FROM_EMAIL = "surf@willlaeri.com"
+ALERT_TIMEZONE = "America/New_York"
+ALERT_COOLDOWN_HOURS = "24"
+
+[[send_email]]
+name = "ALERT_EMAIL"
+destination_address = "wlaeri@gmail.com"
 
 # Set DATABASE_URL as a secret:
 #   wrangler secret put DATABASE_URL

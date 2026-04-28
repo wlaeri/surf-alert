@@ -17,8 +17,12 @@ CREATE TABLE alerts (
   timestamp TIMESTAMPTZ NOT NULL,
   surf_score INTEGER NOT NULL,
   message TEXT NOT NULL,
+  phrase TEXT,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+
+-- Migration for existing deployments:
+--   ALTER TABLE alerts ADD COLUMN phrase TEXT;
 
 CREATE INDEX idx_surf_observations_timestamp ON surf_observations (timestamp DESC);
 CREATE INDEX idx_alerts_timestamp ON alerts (timestamp DESC);
